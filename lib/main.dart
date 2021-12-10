@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'quote.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -21,10 +22,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  List<String> quotes = [
-    'Be Yourself; You are only Version of yourself',
-    'You are a copy of the people you spend time with',
-    'Show ne your friends and i will tell who you are'
+  List<Quote> quotes = [
+    Quote(author: 'Yitzhak', text: 'Be yourself'),
+    Quote(author: 'Yitzhak', text: 'Your are best version of you'),
+    Quote(author: 'Yitzhak', text: 'Great mind'),
+
   ];
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,7 @@ class _HomeState extends State<Home> {
       ),
 
       body: Column(
-        children:  quotes.map((quotes) => Text(quotes)).toList(),
+        children:  quotes.map((quote) => Text('${quote.text}-${quote.author}')).toList(),
 
 
       )
